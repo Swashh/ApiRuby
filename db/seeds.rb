@@ -5,5 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Model.create(name:"Audi")
-Type.create(title:"passenger", body:"A6", model_id: Model.last.id)
+
+5.times do
+  Model.create(name:Faker::Vehicle.car_type)
+  Type.create(title:Faker::Vehicle.make, body:Faker::Vehicle.model("Audi"), model_id: Model.last.id)
+end
